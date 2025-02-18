@@ -1,0 +1,195 @@
+% # Course        : CS513 - Data Analytics & Machine Learning 
+% # First Name    : John 
+% # Last Name     : Rizzo 
+% # Id            : 20036833
+% # purpose       : Probability Assignment
+
+\documentclass[12pt, letterpaper]{article}
+\newcommand{\course}    {CS513 Knowledge Discovery and Data Mining}
+\newcommand{\firstname} {John}
+\newcommand{\lastname}  {Rizzo}
+\newcommand{\studentid} {20036833}
+\newcommand{\purpose}   {Homework 1 Probability Assignment}
+
+\title{\classname \\ \assignmentdescription}
+\author{\firstname\lastname}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{datetime}
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+% \geometry{margin=1in}
+
+% Header and Footer setup
+% \renewcommand{\headrulewidth}{0.4pt}
+% \renewcommand{\footrulewidth}{0.4pt}
+% \setlength{\headheight}{14.49998pt}
+% \addtolength{\topmargin}{-2.49998pt}
+
+\def\leftcircle{(90:1.75cm) circle (2.5cm)}
+
+\pgfplotsset{width=10cm,compat=1.18}
+
+% Document Start
+\begin{document}
+
+\noindent
+\# Course    : \course \\
+\# First Name: \firstname \\
+\# Last Name : \lastname \\
+\# Student ID: \studentid \\
+\# Purpose   : \purpose
+
+\hfill
+
+\noindent
+\textbf{Problem 1.1}
+
+Jerry and Susan have a joint bank account.
+
+Jerry goes to the bank 20\% of the days.
+
+Susan goes there 30\% of the days.
+
+Together they are at the bank 8\% of the days.
+
+$P(B_j) = .20$
+
+$P(B_s) = .30$
+
+$P(B_j \cap B_s) = .08$
+
+\textbf{a}
+
+$P(B_j|B_s) = \frac{P(B_j \cap B_s)}{P(B_s)} = \frac{.08}{.30} = 0.2667 = 27\%$
+
+\textbf{b}
+
+$P(B_s') = 1 - P(B_s) = 1 - .30 = .70$
+
+The probability that Jerry goes to the bank and not Susan
+
+$P(B_j \cap B_s') = P(B_j) - P(B_j \cap B_s) = .20 - .08 = .12$
+
+The probability that Jerry was at the bank given Susan didn't go
+
+$P(B_j|B_s') = \frac{P(B_j \cap B_s')}{P(B_s')} = \frac{.12}{.70} = 0.1714 = 17.14\%$
+
+\textbf{c}
+
+At least one 
+
+$P(B_j \cup B_s) = P(B_j) + P(B_s) - P(B_j \cap B_s) = .20 + .30 - .08 = .42 = 42\%$
+
+Probability that both go is $P(B_j \cap B_s) = .08 = 8\%$
+
+\hfill
+
+\noindent
+\textbf{Problem 1.2}
+
+Harold and Sharon are studying for a test.
+
+Harold's chances of getting a "B", $P(B_h)$, are 80\%.
+
+Sharon's chances of getting a "B", $P(B_s)$ are 90\%.
+
+The probability of at least one of them getting a "B", $P(B_h \cup B_s$), is 91\%.
+
+$P(B_h) = .80$
+
+$P(B_s) = .90$
+
+$P(B_h \cup B_s) = .91$
+
+$P(B_h \cup B_s) = P(B_h) + P(B_s) - P(B_h \cap B_s)$ 
+
+$.91 = .80 + .90 - P(B_h \cap B_s) = 0.79 = 79\%$
+
+$P(B_h \cap B_s) = .80 + .90 - .91 = .79 = 79\%$
+
+\hfill
+
+\textbf{a} $P(B_h) - P(B_h \cap B_s) = .80 - .79 = .01 = 1\%$
+
+\hfill
+
+\textbf{b} $P(B_s) - P(B_h \cap B_s) = .90 - .79 = .11 = 11\%$
+
+\hfill
+
+\textbf{c} $1 - P(B_h' \cup B_s') = 1 - .91 = .09 = 9\%$
+
+\textbf{Problem 1.3}
+
+The events are dependent events because $P(B_j \cap B_s) \neq P(B_j)P(B_s)$
+
+$P(B_j) = .2 = 20\%$
+
+$P(B_s) = .3 = 30\%$
+
+$P(B_j \cap B_s) = 0.08 = 8\%$
+
+$P(B_j)P(B_s) = 0.2 \times 0.3 = 0.06 = 6\%$
+
+$0.08 \neq 0.06$
+
+\textbf{Problem 1.4}
+
+\textbf{a} 
+
+The events are dependent events because $P(A \cap B) \neq P(A)P(B)$
+
+There are 36 possible combinations of 2 six sided die.
+
+P(A) = sum is 6
+
+P(B) = second die is 5
+
+P(A) - Combinations include (5,1) (4,2) (3,3) (2,4) (1,5) so probability is $\frac{5}{36}$
+
+P(B) - Combinations include (1,5) (2,5) (3,5) (4,5) (5,5) (6,5) so probability is $\frac{6}{36} = \frac{1}{6}$
+
+$P(A \cap B) = \frac{1}{36}$ because the only possible option is (1,5)
+
+Solving 
+
+P(A)P(B) = $\frac{5}{36} x \frac{1}{6} = \frac{5}{216}$
+
+$P(A \cap B) = \frac{1}{36}$ or if multiplied by 6 $\frac{6}{216}$
+
+$P(A \cap B) \neq P(A)P(B)$
+
+$\frac{1}{36}\neq\frac{6}{216}$ so they dependent
+
+\textbf{b}
+
+P(A) = The sum is 7
+
+There are 36 possible combinations of two die
+
+P(A) Possible combinations are (1,6) (2,5) (3,4) (4,3) (5,2) (6,1)
+
+$P(A) = \frac{6}{36} = \frac{1}{6}$
+
+P(B) = the first die shows 5.
+
+P(B) possible combinations include (5,1) (5,2) (5,3) (5,4) (5,5) (5,6)
+
+$P(B) = \frac{6}{36} = \frac{1}{6}$
+
+$P(A \cap B) = \frac{1}{36}$ since only (5,2) satisfies the criteria
+
+$P(A \cap B) = P(A)P(B)$
+
+$\frac{1}{36} = \frac{1}{36}$
+
+Since $P(A \cap B) = P(A)P(B)$ then they are independent.
+
+\end{document}
