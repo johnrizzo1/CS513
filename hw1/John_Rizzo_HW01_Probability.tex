@@ -23,6 +23,7 @@
 \usepackage{datetime}
 \usepackage{pgfplots}
 \usepackage{tikz}
+\usepackage{array}
 
 % \geometry{margin=1in}
 
@@ -191,5 +192,116 @@ $P(A \cap B) = P(A)P(B)$
 $\frac{1}{36} = \frac{1}{36}$
 
 Since $P(A \cap B) = P(A)P(B)$ then they are independent.
+
+\textbf{Problem 1.5}
+
+Probability of Finding Choosing a State
+
+Texas: $P(TX) = 0.6$
+
+New Jersey: $P(NJ) = 0.1$
+
+Alaska: $P(AK) = 0.3$ since the total must be 1
+
+Probability of Finding Oil
+
+Texas: $P(Oil|TX) = 0.3$
+
+New Jersey: $P(Oil|NJ) = 0.1$
+
+Alaska: $P(Oil|AK) = 0.2$
+
+\textbf{1}
+
+Using the law of Total Probability
+
+$P(Oil) = P(TX)P(Oil|TX) + P(NJ)P(Oil|NJ) + P(AK)P(Oil|AK)$
+
+$P(Oil) = (0.6)(0.3)     + (0.1)(0.1)     + (0.3)(0.2)$
+
+$P(Oil) = 0.18           + 0.01           + 0.06 = 0.25 = 25\%$
+
+\textbf{2}
+
+Using Bayes' Theorem
+
+$P(TX|Oil) = \frac{P(Oil|TX)P(TX)}{P(Oil)} = \frac{(0.3)(0.6)}{0.25} = \frac{0.18}{0.25} = 0.72 = 72\%$
+
+\textbf{Problem 1.6}
+
+Total Passengers: 2201
+
+The probability that a passenger did not survive.
+
+$\frac{1490}{2201} = 0.68 = 68\%$
+
+The probability that a passenger was staying in the first class.
+
+$\frac{325}{2201} = 0.15 = 15\%$
+
+Given that a passenger survived, what is the probability that the passenger was staying in the first class.
+
+$\frac{203}{711} = .29 = 29\%$
+
+Are survival and staying in the first class independent?
+
+$P(A) = P(Survival) = \frac{711}{2201} = 0.32 = 32\%$
+
+$P(B) = P(1^{st} class) = \frac{325}{2201} = 0.15 = 15\%$
+
+$P(A \cap B) = .29 = 29\%$
+
+$P(A \cap B) \neq P(A) P(B)$
+
+$29\% \neq 47\%$ therefor they are dependent.
+
+Given that a passenger survived what is the probability that the passenger was staying in first class and the passenger was a child?
+
+$\frac{6}{203} = 0.03 = 3\%$
+
+Given that a passenger survived, what is the probability that the passenger was an adult?
+
+$\frac{654}{711} = 0.92 = 92\%$
+
+Given that a passenger survived, are age and staying in the first class independent?
+
+Yes they are independent.
+
+\textbf{Problem 1.7}
+
+\begin{center}
+\begin{tabular}{ | m{10em} | m{3cm}| m{3cm} | m{2cm} | } 
+    \hline
+    & AI Generated (Positive) & Human Generated Negative & Total \\
+    \hline
+    AI Generated (Positive) & 970 & 70 & 1040 \\
+    \hline
+    Human Generated (Negative) & 30 & 930 & 960 \\
+    \hline
+    & 1000 & 1000 & 2000 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ | m{10em} | m{3cm} | m{3cm} | } 
+    \hline
+    & Actual Positive & Actual Negative \\
+    \hline
+    Predicted Positive & TP & FP \\
+    \hline
+    Predicted Negative & FN & TN \\
+    \hline
+\end{tabular}
+\end{center}
+
+Accuracy = $\frac{TP + TN}{TP + FP + FN + TN} = \frac{970+930}{970+70+30+930} = \frac{1900}{2000} = 0.95 = 95\%$
+
+Precision = $\frac{TP}{TP + FP} = \frac{970}{970 + 70} = \frac{970}{1040} = 0.93 = 93\%$
+
+Recall = $\frac{TP}{TP + FN} = \frac{970}{970+30} = \frac{970}{1000} = 0.97 = 97\%$
+
+F1 = $\frac{2 \times Precision \times Recall}{Precision + Recall} = \frac{2 (0.93)(0.97)}{(0.93)+(0.97)} = \frac{1.8042}{1.9} = 0.95 = 95\%$
+
 
 \end{document}
